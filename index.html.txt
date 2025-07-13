@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Juego de Magnitudes Eléctricas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef1f5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Juego de Magnitudes Eléctricas</h1>
+    <form id="quiz-form">
+      <!-- Preguntas -->
+      <div class="question">
+        <p>1. ¿Qué es la intensidad eléctrica?</p>
+        <label><input type="radio" name="q1" value="correcto">La cantidad de carga que pasa por un punto del circuito en un segundo</label><br>
+        <label><input type="radio" name="q1" value="incorrecto">La fuerza que impulsa a los electrones</label><br>
+        <label><input type="radio" name="q1" value="incorrecto">La oposición al paso de la corriente</label>
+      </div>
+
+      <div class="question">
+        <p>2. ¿En qué unidad se mide la resistencia?</p>
+        <label><input type="radio" name="q2" value="correcto">Ohmios (Ω)</label><br>
+        <label><input type="radio" name="q2" value="incorrecto">Voltios (V)</label><br>
+        <label><input type="radio" name="q2" value="incorrecto">Amperes (A)</label>
+      </div>
+
+      <div class="question">
+        <p>3. ¿Qué instrumento se usa para medir la tensión?</p>
+        <label><input type="radio" name="q3" value="correcto">Voltímetro</label><br>
+        <label><input type="radio" name="q3" value="incorrecto">Amperímetro</label><br>
+        <label><input type="radio" name="q3" value="incorrecto">Óhmetro</label>
+      </div>
+
+      <div class="question">
+        <p>4. ¿Cuál de estos factores aumenta la resistencia de un cable?</p>
+        <label><input type="radio" name="q4" value="correcto">Que tenga mayor longitud</label><br>
+        <label><input type="radio" name="q4" value="incorrecto">Que esté más frío</label><br>
+        <label><input type="radio" name="q4" value="incorrecto">Que sea más corto</label>
+      </div>
+
+      <div class="question">
+        <p>5. ¿Cuál es la fórmula correcta para calcular la intensidad?</p>
+        <label><input type="radio" name="q5" value="correcto">Intensidad = Tensión ÷ Resistencia</label><br>
+        <label><input type="radio" name="q5" value="incorrecto">Intensidad = Resistencia ÷ Tensión</label><br>
+        <label><input type="radio" name="q5" value="incorrecto">Intensidad = Tensión × Resistencia</label>
+      </div>
+
+      <div class="question">
+        <p>6. La tensión eléctrica también se conoce como:</p>
+        <label><input type="radio" name="q6" value="correcto">Voltaje o diferencia de potencial</label><br>
+        <label><input type="radio" name="q6" value="incorrecto">Corriente</label><br>
+        <label><input type="radio" name="q6" value="incorrecto">Potencia</label>
+      </div>
+
+      <div class="question">
+        <p>7. ¿Cómo se conecta el amperímetro en un circuito?</p>
+        <label><input type="radio" name="q7" value="correcto">En serie</label><br>
+        <label><input type="radio" name="q7" value="incorrecto">En paralelo</label><br>
+        <label><input type="radio" name="q7" value="incorrecto">Fuera del circuito</label>
+      </div>
+
+      <div class="question">
+        <p>8. ¿Qué ocurre si aumenta la temperatura en un conductor?</p>
+        <label><input type="radio" name="q8" value="correcto">Aumenta la resistencia</label><br>
+        <label><input type="radio" name="q8" value="incorrecto">Disminuye la resistencia</label><br>
+        <label><input type="radio" name="q8" value="incorrecto">No cambia nada</label>
+      </div>
+
+      <div class="question">
+        <p>9. ¿Cuál es la unidad de medida de la intensidad?</p>
+        <label><input type="radio" name="q9" value="correcto">Amperes (A)</label><br>
+        <label><input type="radio" name="q9" value="incorrecto">Voltios (V)</label><br>
+        <label><input type="radio" name="q9" value="incorrecto">Ohmios (Ω)</label>
+      </div>
+
+      <div class="question">
+        <p>10. ¿Qué material ofrece menos resistencia eléctrica?</p>
+        <label><input type="radio" name="q10" value="correcto">Cobre grueso</label><br>
+        <label><input type="radio" name="q10" value="incorrecto">Plástico</label><br>
+        <label><input type="radio" name="q10" value="incorrecto">Cobre delgado</label>
+      </div>
+
+      <!-- Preguntas con analogías hidráulicas -->
+      <div class="question">
+        <p>11. ¿Qué magnitud eléctrica se compara con el "caudal de agua que circula por una tubería"?</p>
+        <label><input type="radio" name="q11" value="correcto">Intensidad</label><br>
+        <label><input type="radio" name="q11" value="incorrecto">Resistencia</label><br>
+        <label><input type="radio" name="q11" value="incorrecto">Tensión</label>
+      </div>
+
+      <div class="question">
+        <p>12. ¿A qué se parece la resistencia eléctrica según la analogía hidráulica?</p>
+        <label><input type="radio" name="q12" value="correcto">A un estrechamiento en la tubería que dificulta el paso del agua</label><br>
+        <label><input type="radio" name="q12" value="incorrecto">A una bomba de agua</label><br>
+        <label><input type="radio" name="q12" value="incorrecto">A una canilla abierta</label>
+      </div>
+
+      <div class="question">
+        <p>13. ¿Qué representa la presión del agua que empuja el caudal por la tubería?</p>
+        <label><input type="radio" name="q13" value="correcto">Tensión (voltaje)</label><br>
+        <label><input type="radio" name="q13" value="incorrecto">Resistencia</label><br>
+        <label><input type="radio" name="q13" value="incorrecto">Intensidad</label>
+      </div>
+
+      <div class="question">
+        <p>14. Si la tubería está muy angosta, ¿qué magnitud eléctrica aumenta?</p>
+        <label><input type="radio" name="q14" value="correcto">Resistencia</label><br>
+        <label><input type="radio" name="q14" value="incorrecto">Intensidad</label><br>
+        <label><input type="radio" name="q14" value="incorrecto">Tensión</label>
+      </div>
+
+      <div class="question">
+        <p>15. ¿Qué sucede con la intensidad si hay más presión de agua (más tensión)?</p>
+        <label><input type="radio" name="q15" value="correcto">Aumenta la intensidad</label><br>
+        <label><input type="radio" name="q15" value="incorrecto">Disminuye la resistencia</label><br>
+        <label><input type="radio" name="q15" value="incorrecto">El agua se detiene</label>
+      </div>
+
+      <div class="question">
+        <p>16. ¿Qué letra representa la intensidad eléctrica según los carteles?</p>
+        <label><input type="radio" name="q16" value="correcto">I</label><br>
+        <label><input type="radio" name="q16" value="incorrecto">V</label><br>
+        <label><input type="radio" name="q16" value="incorrecto">Ω</label>
+      </div>
+
+      <button type="button" onclick="calcularResultado()">Enviar</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function calcularResultado() {
+      const form = document.getElementById("quiz-form");
+      const respuestas = new FormData(form);
+      let correctas = 0;
+      const total = 16;
+
+      for (let i = 1; i <= total; i++) {
+        if (respuestas.get("q" + i) === "correcto") correctas++;
+      }
+
+      const porcentaje = Math.round((correctas / total) * 100);
+      let resultado = `Obtuviste ${correctas} de ${total} respuestas correctas. Nota: ${porcentaje}%`;
+
+      resultado += porcentaje >= 70 ? " ✅ Aprobado" : " ❌ Desaprobado";
+
+      document.getElementById("resultado").innerText = resultado;
+    }
+  </script>
+</body>
+</html>
